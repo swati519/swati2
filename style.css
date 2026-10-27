@@ -1,0 +1,67 @@
+const menuItems = document.querySelectorAll('.menu-item');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('.nav');
+const form = document.querySelector('.booking-form');
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const selectedFilter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
+
+    menuItems.forEach((item) => {
+      const shouldShow = selectedFilter === 'all' || item.dataset.category === selectedFilter;
+      item.style.display = shouldShow ? 'block' : 'none';
+    });
+  });
+});
+
+navToggle.addEventListener('click', () => {
+  const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+  navToggle.setAttribute('aria-expanded', String(!isExpanded));
+  nav.classList.toggle('open');
+});
+
+nav.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalText = submitButton.textContent;
+  submitButton.textContent = 'Request Sent!';
+  submitButton.disabled = true;
+
+  setTimeout(() => {
+    submitButton.textContent = originalText;
+    submitButton.disabled = false;
+    form.reset();
+  }, 2000);
+});
+
+const revealItems = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+revealItems.forEach((item) => revealObserver.observe(item));
+
+const currentYear = new Date().getFullYear();
+const footerText = document.querySelector('.footer-wrap p');
+if (footerText) {
+  footerText.textContent = `© ${currentYear} Hot and Chills Cafe. All rights reserved.`;
+}
+"}]} ivoq to=functions.push_files ảmjson  {
