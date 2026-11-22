@@ -1,22 +1,19 @@
-# GAME ZONE
+# GAME ZONE — Virtual Points Arcade
 
-A responsive, browser-based mini-game arcade demo built with HTML, CSS, and vanilla JavaScript.
+A mobile-first, browser-only arcade prototype using HTML, CSS, and vanilla JavaScript. No build step or external backend is needed: open `index.html` in a browser or serve the folder with a static web server.
 
-## Run locally
+## What's included
 
-Open `index.html` in a modern browser, or serve this directory with any static HTTP server. No build step is required.
+- Original light-lavender and coral GAME ZONE design with fixed mobile navigation.
+- 27 mini games and practice/simulator cards across Mini games, Slots, Card games, Fishing, Casino fun, Sports, and Puzzle categories.
+- Free virtual points, daily reward, profile demo, activity history, and local game progress.
+- Interactive color and number picks, spin wheel, dice, quizzes, memory match, bubble pop, sliding puzzle, and friendly practice simulators.
+- Local admin preview to hide/show games and inspect local demo profile names.
 
-## Included
+## Important limitations
 
-- Twelve playable mini-games: color and number prediction, spin wheel, lucky draw, dice, Ludo sprint, quiz, number guessing, memory cards, bubble pop, snake, and a sliding puzzle.
-- Browser-local player profiles, coin balance, activity history, and demo leaderboard.
-- A local admin preview for viewing profiles, activity totals, and hiding/showing games.
-- Responsive dark arcade UI with keyboard-friendly controls and reduced-motion support.
+This is a **frontend-only demo**. Profiles, demo passwords, points, and history are kept in this browser's `localStorage`; they are not secure authentication and do not sync across visitors or devices. Do not use a real password or sensitive personal information. The admin preview is not protected and is not suitable for real user management. There is no backend, payment processing, real deposit or withdrawal, or advertising provider.
 
-## Important demo limitations
+All points are free, virtual entertainment points with no monetary value. They cannot be purchased, transferred, withdrawn, converted, or redeemed for cash, goods, or prizes. Game simulators and practice tables are non-monetary and award only in-game points.
 
-This is a **frontend-only prototype**, not a production account or administration system. Profiles and passwords are stored in browser `localStorage` and are not securely authenticated; use only throwaway demo credentials. Data is limited to the current browser and is not shared between visitors or devices. The leaderboard is sample/demo data. Admin controls are not protected and only modify the local view. The ad placement is a placeholder; no advertising provider is integrated.
-
-Coins are virtual, free gameplay points only. They cannot be purchased, redeemed, or converted into money or prizes. Some prediction games spend virtual coins for the round and award virtual coins for a correct result, strictly as game mechanics.
-
-Before a public launch, replace browser-local profile handling and admin controls with a secure backend and authorization, add proper server-side validation and abuse controls, and integrate any advertising provider in compliance with its current policies. Never collect payment details for these virtual coins.
+To deploy a real account system, replace local storage with an appropriately secured backend and server-side authorization. This demo intentionally does not implement real-money wagering or payouts.

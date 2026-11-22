@@ -3,49 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0b13">
-  <meta name="description" content="Play quick, colorful mini games, collect virtual coins, and climb the GAME ZONE leaderboard. Just for fun — no real-money prizes.">
-  <title>GAME ZONE — Play your next favorite</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta name="theme-color" content="#fff8f8">
+  <meta name="description" content="GAME ZONE is a colorful arcade of free-to-play mini games, practice tables, quizzes and puzzles. Play with virtual points that have no cash value.">
+  <title>GAME ZONE — Your play, your zone</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#home" aria-label="GAME ZONE home"><span class="brand-mark">G</span><span>GAME<span class="brand-light">ZONE</span></span></a>
-      <div class="side-label">MENU</div>
-      <nav class="side-nav" aria-label="Main navigation">
-        <a class="nav-link active" href="#home"><span class="nav-icon">⌂</span>Overview</a>
-        <a class="nav-link" href="#games"><span class="nav-icon">▦</span>Explore games <span class="nav-count">12</span></a>
-        <a class="nav-link" href="#leaderboard"><span class="nav-icon">♜</span>Leaderboard</a>
-        <button class="nav-link" id="history-link"><span class="nav-icon">◷</span>My activity</button>
-      </nav>
-      <div class="side-label side-label-spaced">YOUR SPACE</div>
-      <button class="profile-card" id="profile-button"><span class="avatar" id="side-avatar">G</span><span class="profile-copy"><b id="side-name">Guest player</b><small id="side-status">Sign in to save progress</small></span><span class="profile-arrow">↗</span></button>
-      <div class="sidebar-bottom"><div class="mini-promo"><span class="promo-spark">✦</span><b>Play. Earn. Repeat.</b><p>Collect virtual coins by playing. Coins have no cash value.</p><a href="#games">Find a game <span>→</span></a></div><div class="side-foot">GAME ZONE <span>·</span> Just for fun</div></div>
-    </aside>
-
-    <main class="main-content" id="home">
-      <header class="topbar"><button class="icon-button mobile-menu" id="mobile-menu" aria-label="Open navigation">☰</button><div class="breadcrumb">Game hub <span>/</span> <b>Overview</b></div><div class="top-actions"><button class="coin-pill" id="coin-display" title="Virtual coins"><span class="coin-icon">✦</span><b id="coin-balance">250</b><span class="coin-label">COINS</span></button><button class="auth-button" id="auth-button">Sign in <span>↗</span></button></div></header>
-      <section class="welcome-row"><div><div class="eyebrow"><span class="live-dot"></span> YOUR DAILY DOSE OF FUN</div><h1>Ready, player<span class="gradient-text" id="welcome-name">?</span></h1><p class="welcome-sub">Pick a game, test your luck, and make today a high-score kind of day.</p></div><button class="profile-chip" id="profile-chip"><span class="avatar small-avatar" id="top-avatar">G</span><span id="top-name">Guest</span><span class="chevron">⌄</span></button></section>
-
-      <section class="hero-card"><div class="hero-glow"></div><div class="hero-content"><div class="hero-tag"><span>✦</span> THE ARCADE IS OPEN</div><h2>One more round.<br><span>One more win.</span></h2><p>Jump into quick games, collect virtual coins, and see how you stack up.</p><a class="primary-button" href="#games">Explore games <span>→</span></a><div class="hero-note"><span>●</span> Free to play <i></i> No real-money prizes</div></div><div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-emoji">🎮</div><div class="float-chip chip-a">✦  +25</div><div class="float-chip chip-b">LEVEL UP!</div><div class="art-dot dot-one"></div><div class="art-dot dot-two"></div></div><div class="hero-pagination"><span class="selected"></span><span></span><span></span></div></section>
-
-      <section class="stats-grid" aria-label="Your gaming stats"><article class="stat-card"><span class="stat-icon purple">◉</span><div><span class="stat-label">Games played</span><b id="games-played">0</b><small>Keep the streak alive</small></div><span class="stat-trend">↗</span></article><article class="stat-card"><span class="stat-icon green">✦</span><div><span class="stat-label">Coins collected</span><b id="coins-earned">250</b><small>Virtual coins only</small></div><span class="stat-trend">↗</span></article><article class="stat-card"><span class="stat-icon blue">♜</span><div><span class="stat-label">Leaderboard rank</span><b id="player-rank">—</b><small>Play to earn your spot</small></div><span class="stat-trend">↗</span></article></section>
-
-      <section class="games-section" id="games"><div class="section-heading"><div><div class="eyebrow">PICK YOUR PLAY</div><h2>Popular games <span class="muted-count">12</span></h2></div><a class="text-link" href="#all-games">View all games <span>→</span></a></div><div class="filter-row" role="group" aria-label="Filter games"><button class="filter-tab active" data-filter="all">All games <span>12</span></button><button class="filter-tab" data-filter="quick">Quick play</button><button class="filter-tab" data-filter="puzzle">Puzzles</button><button class="filter-tab" data-filter="challenge">Challenges</button></div><div class="game-grid" id="game-grid"></div></section>
-
-      <section class="lower-grid"><article class="leaderboard-panel" id="leaderboard"><div class="panel-heading"><div><div class="eyebrow">THE HIGH-SCORE CLUB</div><h2>Leaderboard</h2></div><select id="leaderboard-period" aria-label="Leaderboard time period"><option value="daily">Today</option><option value="weekly">This week</option><option value="monthly">This month</option></select></div><div class="leaderboard-list" id="leaderboard-list"></div><div class="leaderboard-footer"><span>Scores are for fun and bragging rights.</span><button class="text-link" id="leaderboard-info">How it works <span>↗</span></button></div></article><article class="activity-panel" id="activity"><div class="panel-heading"><div><div class="eyebrow">YOUR LATEST MOVES</div><h2>Recent activity</h2></div><button class="icon-button" id="activity-refresh" aria-label="Refresh activity">↻</button></div><div class="activity-list" id="activity-list"></div><button class="activity-more" id="activity-more">View all activity <span>→</span></button></article></section>
-
-      <section class="ad-slot" aria-label="Advertisement"><div class="ad-icon">✧</div><div><b>Your next favorite game is one click away.</b><span>Discover fresh ways to play in the arcade.</span></div><a href="#games">Browse games <span>→</span></a><small>ADVERTISEMENT</small></section>
-      <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">G</span><span>GAME<span class="brand-light">ZONE</span></span></a><p>Play for fun. Coins are virtual, have no cash value, and cannot be purchased or redeemed.</p><div><a href="#games">Games</a><a href="#leaderboard">Leaderboard</a><button id="admin-open">Admin demo</button></div><span class="copyright">© <span id="year"></span> GAME ZONE</span></footer>
-    </main>
-  </div>
-
-  <div class="modal-backdrop" id="modal-backdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Close dialog">×</button><div id="modal-content"></div></section></div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-</body>
-</html>
+  <header class="topbar"><a class="brand" href="#home" aria-label="GAME ZONE home"><span class="brand-symbol">G<span>✦</span></span><span class="brand-name">GAME<span>ZONE</span></span></a><nav class="desktop-nav" aria-label="Main navigation"><a class="selected" href="#home">Home</a><a href="#games">Games</a><a href="#activity">Activity</a><a href="#rewards">Rewards</a></nav><div class="header-actions"><button class="wallet-button" id="wallet-open"><span class="wallet-coin">✦</span><span id="header-points">250</span><small>PTS</small></button><button class="avatar-button" id="account-open" aria-label="Open account">G</button></div></header>
+  <main id="home" class="page-wrap">
+    <section class="hero"><div class="hero-copy"><span class="pill"><span class="pill-dot"></span> YOUR ARCADE, YOUR RULES</span><h1>A little play.<br><span>A lot of fun.</span></h1><p>Jump into quick games, collect virtual points, and find your new favorite way to play.</p><div class="hero-actions"><a class="button-primary" href="#games">Explore games <span>→</span></a><button class="button-plain" id="daily-claim">🎁 Claim daily bonus</button></div><div class="hero-caption"><span>✓</span> Free to play <i></i> Virtual points only <i></i> No cash prizes</div></div><div class="hero-visual" aria-hidden="true"><div class="hero-blob"></div><div class="hero-game">🎮</div><span class="float-sticker sticker-one">✦ +25</span><span class="float-sticker sticker-two">LET'S PLAY!</span><span class="sparkle sparkle-a">✦</span><span class="sparkle sparkle-b">✧</span></div><div class="hero-slide"><i class="active"></i><i></i><i></i></div></section>
+    <section class="wallet-strip" aria-label="Virtual points wallet"><div class="wallet-copy"><span class="wallet-icon">✦</span><div><small>YOUR VIRTUAL WALLET</small><b><span id="wallet-points">250</span> <em>points</em></b><span class="wallet-hint">Just-for-fun points · no cash value</span></div></div><div class="wallet-buttons"><button id="wallet-history">Point history</button><button id="wallet-reward" class="button-primary compact">Get free points <span>+</span></button></div></section>
+    <section class="quick-row"><button class="quick-tile" id="deposit-demo"><span class="quick-icon pink">↙</span><span><b>Get points</b><small>Free gameplay rewards</small></span><span class="quick-arrow">→</span></button><button class="quick-tile" id="withdraw-demo"><span class="quick-icon peach">↗</span><span><b>Point details</b><small>Virtual points only</small></span><span class="quick-arrow">→</span></button><button class="quick-tile" id="daily-tile"><span class="quick-icon violet">🎁</span><span><b>Daily reward</b><small id="daily-status">Your bonus is ready</small></span><span class="quick-arrow">→</span></button></section>
+    <section class="section-block" id="games"><div class="section-heading"><div><span class="kicker">FIND YOUR NEXT FAVORITE</span><h2>Recommended for you <span class="count">✦</span></h2></div><a href="#popular" class="see-all">See all games <span>→</span></a></div><div class="recommend-grid" id="recommended-games"></div></section>
+    <section class="section-block" id="popular"><div class="section-heading"><div><span class="kicker">THE ARCADE LINEUP</span><h2>Popular games</h2></div><span class="tiny-note">New ways to play, every day</span></div><div class="category-bar" id="category-bar" role="tablist" aria-label="Game categories"></div><div class="game-grid" id="game-grid"></div></section>
+    <section class="activity-reward-grid"><article class="activity-card" id="activity"><div class="section-heading compact-heading"><div><span class="kicker">YOUR LATEST ROUNDS</span><h2>Recent activity</h2></div><button class="subtle-link" id="all-activity">View all →</button></div><div id="activity-list"></div></article><article class="reward-card" id="rewards"><span class="reward-art">🎁</span><span class="kicker">A LITTLE SOMETHING EXTRA</span><h2>Daily rewards</h2><p>Check in, play a round, and collect a small virtual-points bonus. No purchase needed.</p><button class="button-primary" id="reward-claim">Claim today's 25 points <span>→</span></button><small id="reward-footnote">Available once a day · points are not redeemable</small></article></section>
+    <section class="promo-banner"><div class="promo-icon">✦</div><div><span class="kicker">WELCOME TO THE FUN SIDE</span><h2>Your next high score is waiting.</h2><p>Choose a category and settle in for a quick round.</p></div><a class="button-primary" href="#games">Pick a game <span>→</span></a><span class="promo-decoration">✧</span></section>
+    <footer><a class="brand footer-brand" href="#home"><span class="brand-symbol">G<span>✦</span></span><span class="brand-name">GAME<span>ZONE</span></span></a><p>Made for fun. Virtual points cannot be bought, withdrawn, exchanged, or redeemed for cash or prizes.</p><div><a href="#games">Games</a><a href="#rewards">Rewards</a><button id="admin-open">Admin preview</button></div></footer>
+  </main>
+  <nav class="bottom-nav" aria-label="Mobile navigation"><a class="active" href="#home"><span>⌂</span>Home</a><a href="#activity"><span>◷</span>Activity</a><a href="#rewards"><span>✦</span>Rewards</a><a href="#games"><span>▦</span>Promotion</a><button id="bottom-account"><span>♙</span>Account</button></nav>
+  <div class="modal-backdrop" id="modal-backdrop" hidden><section class="modal" role="dialog" aria-modal="true"><button class="modal-close" id="modal-close" aria-label="Close">×</button><div id="modal-content"></div></section></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
